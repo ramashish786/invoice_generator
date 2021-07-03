@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Invoice Entry</title>
+    <style>
+        input[type=text] {
+            padding: 14px 20px;
+            margin: 8px 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>{{viewTitle}}</h1>
+    <form action="/invoice/addinvoice" method="POST" autocomplete="off" sytle="margin-top: 20px">
+        <label>Sender</label>
+        <div class="form-row" style="display: grid;grid-template-columns: auto auto auto;padding: 1px;">
+            <div class="form-group col-md-6">
+                <label> company</label>
+                <input type="text" class="form-control" name="sender_company" placeholder="company">
+            </div>
+            <div class="form-group col-md-6">
+                <label>address</label>
+                <input type="text" class="form-control" name="sender_address" placeholder="address">
+            </div>
+            <div class="form-group col-md-6">
+                <label>zip</label>
+                <input type="text" class="form-control" name="sender_zip" placeholder="zip">
+            </div>
+            <div class="form-group col-md-6">
+                <label>city</label>
+                <input type="text" class="form-control" name="sender_city" placeholder="city">
+            </div>
+            <div class="form-group col-md-6">
+                <label>country</label>
+                <input type="text" class="form-control" name="sender_country" placeholder="country">
+            </div>
+        </div>
+
+        <label>Client</label>
+        <div class="form-row" style="display: grid;grid-template-columns: auto auto auto;padding: 1px;">
+            <div class="form-group col-md-6">
+                <label>company</label>
+                <input type="text" class="form-control" name="client_company" placeholder="company">
+            </div>
+            <div class="form-group col-md-6">
+                <label>address</label>
+                <input type="text" class="form-control" name="client_address" placeholder="address">
+            </div>
+            <div class="form-group col-md-6">
+                <label>zip</label>
+                <input type="text" class="form-control" name="client_zip" placeholder="zip">
+            </div>
+            <div class="form-group col-md-6">
+                <label>city</label>
+                <input type="text" class="form-control" name="client_city" placeholder="city">
+            </div>
+            <div class="form-group col-md-6">
+                <label>country</label>
+                <input type="text" class="form-control" name="client_country" placeholder="country">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Invoice Number</label>
+            <input type="text" class="form-control" name="invoiceNumber" placeholder="Invoice Number">
+        </div>
+        <div class="form-group">
+            <label>Invoice Date</label>
+            <input type="text" class="form-control" name="invoiceDate" placeholder="Invoice Date">
+        </div>
+        <div class="form-group">
+            <label>Bottom Notice</label>
+            <input type="text" class="form-control" name="ottomNotice" placeholder="Bottom Notice">
+        </div>
+
+        <label>Product</label>
+        <div class="form-row" style="display: grid;grid-template-columns: auto auto auto;padding: 1px;">
+            <div class="form-group col-md-6">
+                <label>Quantity</label>
+                <input type="text" class="form-control" name="quantity" placeholder="Quantity">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Description</label>
+                <input type="text" class="form-control" name="description" placeholder="Description">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Tax</label>
+                <input type="text" class="form-control" name="tax" placeholder="Tax">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Price</label>
+                <input type="text" class="form-control" name="price" placeholder="Price">
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info">Submit</button>
+            <a class="btn btn-secondary" href="/invoice">Invoice list</a>
+         </div>
+    </form>
+
+
+</body>
+
+</html>

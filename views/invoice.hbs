@@ -1,0 +1,38 @@
+
+<head>
+    <script src="https://unpkg.com/easyinvoice/dist/easyinvoice.min.js"></script>
+    <script src="./js/inMethod.js"></script>
+</head>
+<body>
+<h3> {{viewTitle}} </h3>
+<a class="btn btn-secondary" href="/invoice/addinvoice">Enter invoice</a>   
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Invoice No.</th>
+            <th>Company Name</th>
+            <th>Invoice Date</th>
+        </tr>
+    </thead>
+     <tbody>
+        {{#each invoice}}
+        <tr> 
+            <td>{{this.invoiceNumber}}</td>
+            <td>{{this.client.company}}</td>
+            <td>{{this.invoiceDate}}</td>
+            <td><a href="/invoice/{{this.invoiceNumber}}" class="btn btn-secondary">Create Invoice</a></td>
+            <td><a href="invoice.pdf" id="tag" class="btn btn-secondary" onclick="takeMethod()"download>Download</a></td>
+
+               {{!-- <button class="btn btn-secondary" onclick="//getInvoiceTwo()">Download</button></td> --}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</body>
+<script> var count = 0;
+function takeMethod(){
+document.getElementById("tag").href  = "invoice"+count+".pdf";
+count = count + 1;
+}
+</script>
+
